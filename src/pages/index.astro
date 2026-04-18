@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const pageTitle = "Meu Site Astro";
 const identify = {
   firstName: "Diogo",
@@ -13,6 +14,8 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "navy";
+
 ---
 
 <html lang="en">
@@ -23,12 +26,20 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor}}>
+			.skill {
+				color: var(--skillColor);
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
 
-		<a href="/">Início</a>
-		<a href="/about/">Sobre</a>
-		<a href="/blog/">Blog</a>
+		<nav>
+			<a href="/">Início</a>
+			<a href="/about/">Sobre</a>
+			<a href="/blog/">Blog</a>
+		</nav>
 
 		<h1>{pageTitle}</h1>
 
@@ -42,7 +53,7 @@ const goal = 3;
 		</ul>
 		<p>Minhas habilidades são:</p>
 		<ul>
-		{skills.map((habilidade) => <li>{habilidade}</li>)}
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		{happy && <p>Estou feliz em estar aprendendo Astro!</p>}

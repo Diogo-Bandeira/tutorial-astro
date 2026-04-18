@@ -1,5 +1,21 @@
 ---
+import '../styles/global.css';
 const pageTitle = "Sobre Mim";
+const identify = {
+  firstName: "Diogo",
+  country: "Brasil",
+  occupation: "Programador Web",
+  hobbies: ["futebol", "filmes", "games", "coder"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Escrever Documentação"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+
 ---
 
 <html lang="en">
@@ -10,12 +26,16 @@ const pageTitle = "Sobre Mim";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        
+
 	</head>
 	<body>
 
-		<a href="/">Início</a>
-		<a href="/about/">Sobre</a>
-        <a href="/blog/">Blog</a>
+		<nav>
+			<a href="/">Início</a>
+			<a href="/about/">Sobre</a>
+			<a href="/blog/">Blog</a>
+		</nav>
 
 		<h1>{pageTitle}</h1>
 		<h2>... e meu novo site Astro!</h2>
